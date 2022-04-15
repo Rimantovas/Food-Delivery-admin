@@ -1,0 +1,228 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+
+part of 'producer.dart';
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+ProducerModel _$ProducerModelFromJson(Map<String, dynamic> json) {
+  return _ProducerModel.fromJson(json);
+}
+
+/// @nodoc
+class _$ProducerModelTearOff {
+  const _$ProducerModelTearOff();
+
+  _ProducerModel call(
+      {int id = 0, String name = '', String city = '', String country = ''}) {
+    return _ProducerModel(
+      id: id,
+      name: name,
+      city: city,
+      country: country,
+    );
+  }
+
+  ProducerModel fromJson(Map<String, Object?> json) {
+    return ProducerModel.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $ProducerModel = _$ProducerModelTearOff();
+
+/// @nodoc
+mixin _$ProducerModel {
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get city => throw _privateConstructorUsedError;
+  String get country => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ProducerModelCopyWith<ProducerModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ProducerModelCopyWith<$Res> {
+  factory $ProducerModelCopyWith(
+          ProducerModel value, $Res Function(ProducerModel) then) =
+      _$ProducerModelCopyWithImpl<$Res>;
+  $Res call({int id, String name, String city, String country});
+}
+
+/// @nodoc
+class _$ProducerModelCopyWithImpl<$Res>
+    implements $ProducerModelCopyWith<$Res> {
+  _$ProducerModelCopyWithImpl(this._value, this._then);
+
+  final ProducerModel _value;
+  // ignore: unused_field
+  final $Res Function(ProducerModel) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? city = freezed,
+    Object? country = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: city == freezed
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      country: country == freezed
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$ProducerModelCopyWith<$Res>
+    implements $ProducerModelCopyWith<$Res> {
+  factory _$ProducerModelCopyWith(
+          _ProducerModel value, $Res Function(_ProducerModel) then) =
+      __$ProducerModelCopyWithImpl<$Res>;
+  @override
+  $Res call({int id, String name, String city, String country});
+}
+
+/// @nodoc
+class __$ProducerModelCopyWithImpl<$Res>
+    extends _$ProducerModelCopyWithImpl<$Res>
+    implements _$ProducerModelCopyWith<$Res> {
+  __$ProducerModelCopyWithImpl(
+      _ProducerModel _value, $Res Function(_ProducerModel) _then)
+      : super(_value, (v) => _then(v as _ProducerModel));
+
+  @override
+  _ProducerModel get _value => super._value as _ProducerModel;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? city = freezed,
+    Object? country = freezed,
+  }) {
+    return _then(_ProducerModel(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: city == freezed
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      country: country == freezed
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ProducerModel extends _ProducerModel {
+  const _$_ProducerModel(
+      {this.id = 0, this.name = '', this.city = '', this.country = ''})
+      : super._();
+
+  factory _$_ProducerModel.fromJson(Map<String, dynamic> json) =>
+      _$$_ProducerModelFromJson(json);
+
+  @JsonKey()
+  @override
+  final int id;
+  @JsonKey()
+  @override
+  final String name;
+  @JsonKey()
+  @override
+  final String city;
+  @JsonKey()
+  @override
+  final String country;
+
+  @override
+  String toString() {
+    return 'ProducerModel(id: $id, name: $name, city: $city, country: $country)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ProducerModel &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.city, city) &&
+            const DeepCollectionEquality().equals(other.country, country));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(city),
+      const DeepCollectionEquality().hash(country));
+
+  @JsonKey(ignore: true)
+  @override
+  _$ProducerModelCopyWith<_ProducerModel> get copyWith =>
+      __$ProducerModelCopyWithImpl<_ProducerModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ProducerModelToJson(this);
+  }
+}
+
+abstract class _ProducerModel extends ProducerModel {
+  const factory _ProducerModel(
+      {int id, String name, String city, String country}) = _$_ProducerModel;
+  const _ProducerModel._() : super._();
+
+  factory _ProducerModel.fromJson(Map<String, dynamic> json) =
+      _$_ProducerModel.fromJson;
+
+  @override
+  int get id;
+  @override
+  String get name;
+  @override
+  String get city;
+  @override
+  String get country;
+  @override
+  @JsonKey(ignore: true)
+  _$ProducerModelCopyWith<_ProducerModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
