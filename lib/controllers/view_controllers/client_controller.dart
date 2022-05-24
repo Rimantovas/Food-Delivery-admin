@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:food_delivery/constants.dart';
 import 'package:food_delivery/controllers/general.dart';
-import 'package:food_delivery/controllers/view_controllers/courier_controller.dart';
 import 'package:food_delivery/models/models.dart';
 import 'package:collection/collection.dart';
 

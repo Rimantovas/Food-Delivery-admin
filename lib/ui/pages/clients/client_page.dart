@@ -8,7 +8,6 @@ import 'package:food_delivery/models/building_type/building_type.dart';
 import 'package:food_delivery/models/client/client.dart';
 import 'package:food_delivery/models/client_address/client_address.dart';
 import 'package:reactive_forms/reactive_forms.dart';
-import 'package:collection/collection.dart';
 
 final buildTypeProvider =
     StateProvider.autoDispose<List<BuildingTypeModel>>((ref) {

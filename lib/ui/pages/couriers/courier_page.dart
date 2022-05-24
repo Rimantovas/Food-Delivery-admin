@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:food_delivery/controllers/general.dart';
-import 'package:food_delivery/controllers/view_controllers/courier_controller.dart';
 import 'package:food_delivery/helper.dart';
 import 'package:food_delivery/models/models.dart';
 import 'package:reactive_forms/reactive_forms.dart';
