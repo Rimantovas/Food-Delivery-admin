@@ -65,6 +65,13 @@ class Sider extends ConsumerWidget {
             label: 'Stores',
             onTap: () => ref.read(pageProvider.notifier).state = 3,
           ),
+          const Divider(),
+          SelectionButton(
+            isSelected: index == 4,
+            label: 'Carts',
+            isSpecial: true,
+            onTap: () => ref.read(pageProvider.notifier).state = 4,
+          ),
         ],
       ),
     );

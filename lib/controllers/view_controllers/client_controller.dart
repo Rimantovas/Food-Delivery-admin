@@ -47,7 +47,6 @@ class ClientController extends StateNotifier<ClientState> {
       var newList = oldState.clients;
       for (var model in models) {
         final result = await _read(databaseProvider).delete(CLIENT, model.id);
-        print('${model.id} == $result');
         if (result) {
           newList.remove(model);
         }
@@ -117,26 +116,20 @@ class ClientController extends StateNotifier<ClientState> {
       var lastId = newList.last.id + 1;
       //-=------------------------------
       for (var address in addresses) {
-        print(address);
-
         final temp = oldState.clientAddresss
             .firstWhereOrNull((element) => element.id == address.id);
         if (address.id == 0) {
           //create
-          print('create');
           final addressId = lastId;
           final _result = await _read(databaseProvider)
               .create(CLIENT_ADDRESS, addressId, address.toDocument(client.id));
-          print('==create: $_result');
           if (_result) {
             newList.add(address.copyWith(id: addressId, clientId: client.id));
             lastId++;
           }
         } else if (temp != null && temp != address) {
-          print('update');
           final _result = await _read(databaseProvider)
               .edit(CLIENT_ADDRESS, address.id, address.toDocument(client.id));
-          print('==update: $_result');
           if (_result) {
             newList[newList.indexOf(temp)] = address;
           }

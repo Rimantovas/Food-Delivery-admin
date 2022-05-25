@@ -72,11 +72,12 @@ mixin _$OrderModel {
   @JsonKey(name: 'delivery_status')
   int get deliveryStatusId => throw _privateConstructorUsedError;
   @JsonKey(name: 'fk_client_addressid')
-  int get clientAddressId => throw _privateConstructorUsedError;
+  int get clientAddressId => throw _privateConstructorUsedError; //Adreso name
   @JsonKey(name: 'fk_courierid')
-  int get courierId => throw _privateConstructorUsedError;
+  int get courierId => throw _privateConstructorUsedError; //Kurjerio vardas
   @JsonKey(name: 'fk_store_addressid')
-  int get storeAddressId => throw _privateConstructorUsedError;
+  int get storeAddressId =>
+      throw _privateConstructorUsedError; //Parduotuves pavadinimas
   @JsonKey(name: 'fk_receiptId')
   int get receiptId => throw _privateConstructorUsedError;
 
@@ -294,13 +295,13 @@ class _$_OrderModel extends _OrderModel {
   @override
   @JsonKey(name: 'fk_client_addressid')
   final int clientAddressId;
-  @override
+  @override //Adreso name
   @JsonKey(name: 'fk_courierid')
   final int courierId;
-  @override
+  @override //Kurjerio vardas
   @JsonKey(name: 'fk_store_addressid')
   final int storeAddressId;
-  @override
+  @override //Parduotuves pavadinimas
   @JsonKey(name: 'fk_receiptId')
   final int receiptId;
 
@@ -392,13 +393,13 @@ abstract class _OrderModel extends OrderModel {
   @override
   @JsonKey(name: 'fk_client_addressid')
   int get clientAddressId;
-  @override
+  @override //Adreso name
   @JsonKey(name: 'fk_courierid')
   int get courierId;
-  @override
+  @override //Kurjerio vardas
   @JsonKey(name: 'fk_store_addressid')
   int get storeAddressId;
-  @override
+  @override //Parduotuves pavadinimas
   @JsonKey(name: 'fk_receiptId')
   int get receiptId;
   @override

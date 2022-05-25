@@ -7,10 +7,12 @@ class SelectionButton extends StatelessWidget {
     required this.isSelected,
     required this.label,
     required this.onTap,
+    this.isSpecial = false,
   }) : super(key: key);
   final bool isSelected;
   final String label;
   final VoidCallback onTap;
+  final bool isSpecial;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,9 +23,17 @@ class SelectionButton extends StatelessWidget {
         horizontal: 6,
       ),
       decoration: BoxDecoration(
-        color: isSelected ? ColorsTheme.primaryColor : null,
+        color: isSelected
+            ? isSpecial
+                ? ColorsTheme.specialColor
+                : ColorsTheme.primaryColor
+            : null,
         border: Border.all(
-          color: isSelected ? Colors.transparent : Colors.grey,
+          color: isSelected
+              ? Colors.transparent
+              : isSpecial
+                  ? ColorsTheme.specialColor
+                  : Colors.grey,
         ),
         borderRadius: BorderRadius.circular(10),
       ),

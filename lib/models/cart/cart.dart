@@ -24,3 +24,23 @@ class CartModel with _$CartModel {
   factory CartModel.fromJson(Map<String, dynamic> json) =>
       _$CartModelFromJson(json);
 }
+
+@freezed
+class CartVM with _$CartVM {
+  const CartVM._();
+
+  const factory CartVM({
+    @JsonKey(name: 'date_created') @DatetimeConverter() DateTime? dateCreated,
+    @Default(0) int id,
+    @JsonKey(name: 'client_name') @Default('') String clientName,
+    @JsonKey(name: 'total_products_count')
+    @Default(0.0)
+        double totalProductsCount,
+    @JsonKey(name: 'total_products_price')
+    @Default(0.0)
+        double totalProductsPrice,
+    @Default(0) int minimalCartFeeId, //many
+  }) = _CartVM;
+
+  factory CartVM.fromJson(Map<String, dynamic> json) => _$CartVMFromJson(json);
+}

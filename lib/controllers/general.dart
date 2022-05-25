@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:food_delivery/controllers/view_controllers/cart_controller.dart';
 import 'package:food_delivery/controllers/view_controllers/client_controller.dart';
 import 'package:food_delivery/controllers/view_controllers/courier_controller.dart';
 import 'package:food_delivery/controllers/view_controllers/product_controller.dart';
@@ -27,6 +28,10 @@ final courierProvider =
 
 final storeProvider = StateNotifierProvider<StoreController, StoreState>((ref) {
   return StoreController(ref.read);
+});
+
+final cartsProvider = StateNotifierProvider<CartController, CartState>((ref) {
+  return CartController(ref.read);
 });
 
 //---------------------------------------------------------------

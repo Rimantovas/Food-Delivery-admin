@@ -121,4 +121,58 @@ class DatabaseRepository {
       return [];
     }
   }
+
+  Future<List<CartVM>> getCarts(DateTime? from, DateTime? to) async {
+    try {
+      var query = '''
+      SELECT 
+        c.id,
+        c.date_created,
+        cl.name as client_name,
+        SUM(st.quantity) as total_products_count,
+        SUM(pr.price_per_incrementation) as total_products_price
+      FROM
+        `$CART` c
+        INNER JOIN $CLIENT cl ON cl.id=c.fk_clientid
+        LEFT JOIN $PRODUCT_SELECTION st 
+          INNER JOIN $PRODUCT pr ON pr.id=st.fk_productid
+        ON st.fk_cartid=c.id
+        WHERE
+          c.date_created >= IFNULL(?, c.date_created)
+          AND c.date_created <= IFNULL(?, c.date_created)
+        GROUP BY c.id
+      ''';
+
+      var results =
+          await _connection.query(query, [from?.toUtc(), to?.toUtc()]);
+      return results.map((e) => CartVM.fromJson(e.fields)).toList();
+    } catch (e) {
+      print(e);
+      return [];
+    }
+  }
+
+  Future<List<CartVM>> getCarts2() async {
+    try {
+      var query = '''
+      SELECT 
+        cart.id,
+        cart.date_created,
+        client.name as client_name
+        SUM(st.quantity) as total_products_count
+      FROM
+        `$CLIENT` client
+        INNER JOIN $CART cart ON cart.fk_clientid=client.id
+        LEFT JOIN $PRODUCT_SELECTION st ON st.fk_cartid=cart.id
+        GROUP BY client.id
+      ''';
+
+      var results = await _connection.query(query);
+      return results.map((e) => CartVM.fromJson(e.fields)).toList();
+    } catch (e) {
+      print(e);
+
+      return [];
+    }
+  }
 }

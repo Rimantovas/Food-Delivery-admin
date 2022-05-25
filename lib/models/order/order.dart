@@ -17,10 +17,16 @@ class OrderModel with _$OrderModel {
     @DatetimeConverter()
         DateTime? plannedDeliveryDate,
     @JsonKey(name: 'delivery_status') @Default(0) int deliveryStatusId,
-    @JsonKey(name: 'fk_client_addressid') @Default(0) int clientAddressId,
-    @JsonKey(name: 'fk_courierid') @Default(0) int courierId,
-    @JsonKey(name: 'fk_store_addressid') @Default(0) int storeAddressId,
-    @JsonKey(name: 'fk_receiptId') @Default(0) int receiptId,
+    @JsonKey(name: 'fk_client_addressid')
+    @Default(0)
+        int clientAddressId, //Adreso name
+    @JsonKey(name: 'fk_courierid') @Default(0) int courierId, //Kurjerio vardas
+    @JsonKey(name: 'fk_store_addressid')
+    @Default(0)
+        int storeAddressId, //Parduotuves pavadinimas
+    @JsonKey(name: 'fk_receiptId')
+    @Default(0)
+        int receiptId, //Produktus somehow gauti
   }) = _OrderModel;
 
   factory OrderModel.fromJson(Map<String, dynamic> json) =>

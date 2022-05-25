@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:food_delivery/controllers/general.dart';
+import 'package:food_delivery/ui/pages/carts/carts_page.dart';
 import 'package:food_delivery/ui/pages/clients/clients_page.dart';
 import 'package:food_delivery/ui/pages/couriers/couriers_page.dart';
 import 'package:food_delivery/ui/pages/products/products_page.dart';
@@ -20,7 +21,7 @@ class _HomePageState extends ConsumerState<HomePage>
 
   @override
   void initState() {
-    controller = TabController(length: 4, vsync: this);
+    controller = TabController(length: 5, vsync: this);
     fetchData();
     super.initState();
   }
@@ -32,6 +33,7 @@ class _HomePageState extends ConsumerState<HomePage>
     ref.read(clientProvider.notifier).getClients();
     ref.read(courierProvider.notifier).getCouriers();
     ref.read(storeProvider.notifier).getStores();
+    ref.read(cartsProvider.notifier).getCarts();
     //ref.read(productProvider)
   }
 
@@ -47,12 +49,16 @@ class _HomePageState extends ConsumerState<HomePage>
         children: [
           const Sider(),
           Expanded(
-            child: TabBarView(controller: controller, children: const [
-              CouriersPage(),
-              ProductsPage(),
-              ClientsPage(),
-              StoresPage(),
-            ]),
+            child: TabBarView(
+                controller: controller,
+                physics: const NeverScrollableScrollPhysics(),
+                children: const [
+                  CouriersPage(),
+                  ProductsPage(),
+                  ClientsPage(),
+                  StoresPage(),
+                  CartsPage(),
+                ]),
           ),
         ],
       ),
